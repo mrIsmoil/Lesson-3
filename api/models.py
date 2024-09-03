@@ -1,6 +1,6 @@
 from django.db import models
 from multiselectfield import MultiSelectField
-
+# from user.models import User
 COLORS=[
    ('blck', 'Black'),
    ('wht', 'White'),
@@ -12,7 +12,7 @@ COLORS=[
 ]
 
 class Car(models.Model):
-   # user= models.ForeignKey( , on_delete=models.CASCADE)
+   # user= models.ForeignKey(User, on_delete=models.CASCADE)
    name= models.CharField( max_length=50)
    model= models.CharField(max_length=100)
    color= MultiSelectField(choices=COLORS)
